@@ -8,6 +8,12 @@ function convertArrayStringsToNumbers() {
   /* Your code here should convert the data array to an array containing only numbers and no strings and log the code to the console. */
   const newData = data.map((str) => Number(str));
   console.log(newData);
+
+  const newDataTwo = [];
+  data.forEach((str) => {
+    newDataTwo.push(Number(str));
+  });
+  console.log(newDataTwo);
 }
 
 convertArrayStringsToNumbers();
