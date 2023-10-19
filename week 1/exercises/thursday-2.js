@@ -84,7 +84,7 @@ function generateTable() {
     const tr = document.createElement("tr");
     tableBody.appendChild(tr);
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i <= newData.length; i++) {
       const td = document.createElement("td");
       td.textContent = object[keys[i]];
       tr.appendChild(td);
