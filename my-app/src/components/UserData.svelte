@@ -11,7 +11,7 @@
         }
 
         const response = await fetch(
-            `https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${username}&api_key=ae4f9bac310f0d968cd4f48f80abd386&format=json`
+            `https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${username}&api_key=YOUR_API_KEY&format=json`
         );
 
         if (response.ok) {
@@ -32,7 +32,7 @@
 
     async function TopTags(track) {
         const response2 = await fetch(
-            `https://ws.audioscrobbler.com/2.0/?method=track.gettoptags&artist=${track.artist.name}&track=${track.name}&api_key=ae4f9bac310f0d968cd4f48f80abd386&format=json`
+            `https://ws.audioscrobbler.com/2.0/?method=track.gettoptags&artist=${track.artist.name}&track=${track.name}&api_key=YOUR_API_KEY&format=json`
         );
 
         if (response2.ok) {

@@ -1,28 +1,27 @@
 <!-- src/routes/+page.svelte -->
 
 <script>
-	import SimilarTracks from '../components/similarTracks.svelte'; // Import the BarChart component
-	import UserData from '../components/UserData.svelte';
-	import '../components/global.css';
-	import TopTags from '../components/TopTags.svelte';
+  import SimilarTracks from "../components/similarTracks.svelte"; // Import the BarChart component
+  import UserData from "../components/UserData.svelte";
+  import "../components/global.css";
 </script>
 
 <header>
-	<!-- Header content -->
+  <!-- Header content -->
 </header>
 
 <body>
-	<main>
-		<!-- Include the BarChart component here -->
+  <main>
+    <!-- Include the BarChart component here -->
 
-		<UserData />
-		<TopTags />
-		<!-- <SimilarTracks /> -->
-	</main>
+    <UserData />
+
+    <!-- <SimilarTracks /> -->
+  </main>
 </body>
 
 <footer>
-	<!-- Footer content -->
+  <!-- Footer content -->
 </footer>
 
 <style>
