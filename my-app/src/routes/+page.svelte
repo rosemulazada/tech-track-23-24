@@ -1,9 +1,10 @@
 <!-- src/routes/+page.svelte -->
 
 <script>
-  import SimilarTracks from "../components/similarTracks.svelte"; // Import the BarChart component
   import UserData from "../components/UserData.svelte";
   import "../components/global.css";
+  import BubblePlot from "../components/BubblePlot.svelte";
+  import StartButton from "../components/startButton.svelte";
 </script>
 
 <header>
@@ -15,6 +16,8 @@
     <!-- Include the BarChart component here -->
 
     <UserData />
+    <!-- <StartButton /> -->
+    <BubblePlot />
 
     <!-- <SimilarTracks /> -->
   </main>

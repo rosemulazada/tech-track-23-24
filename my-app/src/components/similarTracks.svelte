@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	// import { onMount } from 'svelte';
 
 	let tracks = [];
@@ -9,11 +9,11 @@
 	let isNotFound = false;
 
 	console.log(
-		`https://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=${artist}&track=${track}&api_key=ae4f9bac310f0d968cd4f48f80abd386&format=json`
+		`https://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=${artist}&track=${track}&api_key=apikey&format=json`
 	);
 
 	console.log(
-		'https://ws.audioscrobbler.com/2.0/?method=artist.getcorrection&artist=Shkira&api_key=ae4f9bac310f0d968cd4f48f80abd386&format=json'
+		'https://ws.audioscrobbler.com/2.0/?method=artist.getcorrection&artist=Shkira&api_key=apikey&format=json'
 	);
 
 	function searchTracks() {
@@ -25,7 +25,7 @@
 			isLoading = true;
 
 			// artist correction api last.fm
-			fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getcorrection&artist=${artist}&api_key=ae4f9bac310f0d968cd4f48f80abd386&format=json`)
+			fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getcorrection&artist=${artist}&api_key=apikey&format=json`)
 			.then((res) => res.json())
 			.then((data) => {
 				const correctedArtist = data.corrections?.correction?.artist;
@@ -34,7 +34,7 @@
 				}
 			})
 
-			fetch(`https://ws.audioscrobbler.com/2.0/?method=track.getcorrection&artist=${artist}&track=${track}&api_key=ae4f9bac310f0d968cd4f48f80abd386&format=json`)
+			fetch(`https://ws.audioscrobbler.com/2.0/?method=track.getcorrection&artist=${artist}&track=${track}&api_key=apikey&format=json`)
 			.then((res) => res.json())
 			.then((data) => {
 				const correctedTrack = data.corrections?.correction?.track;
@@ -104,4 +104,4 @@
 	h1 {
 		display: block;
 	}
-</style>
+</style> -->
