@@ -4,7 +4,7 @@
   import UserData from "../components/UserData.svelte";
   import "../components/global.css";
   import BubblePlot from "../components/BubblePlot.svelte";
-  import StartButton from "../components/startButton.svelte";
+  // import StartButton from "../components/startButton.svelte";
 </script>
 
 <header>

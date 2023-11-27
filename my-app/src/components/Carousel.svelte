@@ -1,8 +1,0 @@
-<script>
-
-function becomeCenter() {
-    
-}
-
-</script>
-
