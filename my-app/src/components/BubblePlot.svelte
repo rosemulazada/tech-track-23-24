@@ -49,26 +49,35 @@
         .data(nodes)
         .join("circle")
         .attr("r", (d) => d.count * 15)
-        .attr("cx", (d) => d.x)
-        .attr("cy", (d) => d.y)
+        .attr(
+          "cx",
+          (d) =>
+            (d.x = Math.max(d.count * 15, Math.min(width - d.count * 15, d.x)))
+        )
+        .attr(
+          "cy",
+          (d) =>
+            (d.y = Math.max(d.count * 15, Math.min(height - d.count * 15, d.y)))
+        )
         .style("fill", (d) => d.color)
         .append("title")
         .text((d) => `${d.genre}: ${d.count}`);
 
-      d3.select(svg)
+      const text = d3
+        .select(svg)
         .selectAll("text")
-        .data(nodes)
-        .enter()
-        .append("text")
+        .data(
+          nodes.filter((d) => d.count * 15 > d.genre.length * 5)
+        )
+        .join("text")
         .attr("x", (d) => d.x)
         .attr("y", (d) => d.y)
         .text((d) => d.genre)
         .style("text-anchor", "middle")
-        .attr("font-size", (d) => d.radius * 0.25 + "px")
+        .attr("dy", ".35em")
         .style("fill", "white");
     }
   }
-  onMount(() => {});
 </script>
 
 <body>

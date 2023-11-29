@@ -1,5 +1,3 @@
-<!-- 146b1de8e4d3c8c7b3efb8e22115d3af -->
-
 <script>
   import { counterStore } from "../store.js";
   let username = "";
@@ -15,7 +13,6 @@
 
   const unsubscribe = counterStore.subscribe((value) => {
     counter = value;
-    // console.log("store", counter);
   });
 
   // code for debounce in search bar can be found here: https://svelte.dev/repl/f55e23d0bf4b43b1a221cf8b88ef9904?version=3.12.1
@@ -30,7 +27,7 @@
   async function getTopTracks() {
     tracks = [];
     counter = [];
-    
+
     const response = await fetch(
       `https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${username}&api_key=146b1de8e4d3c8c7b3efb8e22115d3af&format=json`
     );
@@ -113,13 +110,13 @@
 </script>
 
 <body>
-  <h1>What music should I listen to next?</h1>
+  <h1>What music do I listen to most?</h1>
 
   <input
     bind:value={username}
     type="text"
     placeholder="Enter Last.FM username"
-    on:keyup={(event) => {
+    on:keydown={(event) => {
       debounce(event.target.value);
       if (event.key === "Enter") {
         searchOnEnter();
@@ -128,11 +125,11 @@
   />
 
   <button on:click={getTopTracks}>Get top tracks</button>
-  <p>Get your top tracks..</p>
 
   {#if loading}
     <!-- source for loading state https://loading.io/css/ -->
     <p>Gathering data...</p>
+    <p>Here come your top tracks..</p>
     <div class="lds-roller">
       <div />
       <div />
@@ -143,8 +140,10 @@
       <div />
       <div />
     </div>
-  {:else}
+  {:else if tracks.length > 0}
     <div>
+      <p>Here are your top tracks!</p>
+      <p>hover over small bubbles to view tag and count.</p>
       <ul>
         {#each tracks as track}
           <li>{track.name} by {track.artist.name}</li>
@@ -196,15 +195,16 @@
     list-style-type: none;
   }
 
- p {
-    font-weight: bold;
-  }
-
   p:first-of-type {
-    margin-bottom: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  p:last-of-type {
+    margin-bottom: 1.5rem;
+    font-style: italic;
   }
   /* loading wheel */
-
   .lds-roller {
     display: inline-block;
     position: relative;
@@ -290,7 +290,7 @@
     }
   }
 
-  /* button animation (code from previous project, udemy course on scss by jonas schmedtmann)  */
+  /* button animation (code from previous project, udemy course on scss by jonas schmedtmann) */
   button {
     margin-top: 1rem;
     margin-bottom: 1rem;
