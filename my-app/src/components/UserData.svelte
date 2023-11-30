@@ -6,7 +6,7 @@
   let counter = [];
   let topTag = [];
   let loading = false;
-  let topTracksAnnounced = false;
+
 
   let val = "";
   let timer;
@@ -42,7 +42,6 @@
       }
       for (const track of tracks) {
         await getTopTags(track);
-        // await getRecommended();
       }
       loading = false;
       if (Object.keys(counter).length > 0) {
@@ -52,7 +51,7 @@
       console.error("Top track data could not be fetched.");
       error = "Please enter your Last.FM username.";
     }
-    // console.log(counter);
+
     console.log("store", counter);
   }
 
@@ -78,29 +77,11 @@
           console.log("No tag was found");
         }
       }
-
-      // console.log(data);
     } else {
       console.error("Tag data could not be fetched.");
       error = "Please enter your Last.FM username.";
     }
-
-    // console.log(counter);
   }
-
-  // async function getRecommended() {
-  //   const response3 = await fetch(
-  //     `https://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${topTag}&api_key=146b1de8e4d3c8c7b3efb8e22115d3af&format=json`
-  //   );
-
-  //   if (response3.ok) {
-  //     const data = await response3.json();
-  //     error = "";
-  //   } else {
-  //     console.log("Recommended song data could not be fetched.");
-  //     error = "A song could not be found for this genre.";
-  //   }
-  // }
 
   function searchOnEnter() {
     if (!username.trim()) {
@@ -199,7 +180,7 @@
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
-  
+
   p:last-of-type {
     margin-bottom: 1.5rem;
     font-style: italic;
@@ -337,10 +318,7 @@
     z-index: -1;
     transition: all 0.4s;
   }
-  button::after {
-    background: #fff;
-    color: #777;
-  }
+
   button:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;

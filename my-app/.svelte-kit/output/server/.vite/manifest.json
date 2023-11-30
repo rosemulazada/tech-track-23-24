@@ -51,8 +51,13 @@
     "file": "_app/immutable/assets/HelveticaNowDisplayXBlk.b71f72fe.otf",
     "src": "src/components/HelveticaNowDisplayXBlk.otf"
   },
+  "src/routes/+layout.js": {
+    "file": "entries/pages/_layout.js",
+    "isEntry": true,
+    "src": "src/routes/+layout.js"
+  },
   "src/routes/+page.css": {
-    "file": "_app/immutable/assets/_page.e63dd480.css",
+    "file": "_app/immutable/assets/_page.02abf702.css",
     "src": "src/routes/+page.css"
   },
   "src/routes/+page.svelte": {
@@ -60,7 +65,7 @@
       "_app/immutable/assets/HelveticaNowDisplayXBlk.b71f72fe.otf"
     ],
     "css": [
-      "_app/immutable/assets/_page.e63dd480.css"
+      "_app/immutable/assets/_page.02abf702.css"
     ],
     "file": "entries/pages/_page.svelte.js",
     "imports": [

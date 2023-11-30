@@ -1,5 +1,6 @@
+<!-- bubble plot template https://www.d3indepth.com/force-layout/ -->
+
 <script>
-  import { onMount } from "svelte";
   import * as d3 from "d3";
   import { counterStore } from "../store.js";
   import chroma from "chroma-js";
@@ -66,9 +67,7 @@
       const text = d3
         .select(svg)
         .selectAll("text")
-        .data(
-          nodes.filter((d) => d.count * 15 > d.genre.length * 5)
-        )
+        .data(nodes.filter((d) => d.count * 15 > d.genre.length * 5))
         .join("text")
         .attr("x", (d) => d.x)
         .attr("y", (d) => d.y)
