@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Helvetia Now";
+  src: url("HelveticaNowDisplayXBlk.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-size: 12px; */
+  font-family: Helvetica Now, sans-serif;
+  font-size: 1rem;
+  background: rgb(29, 29, 29);
+  color: white;
+}
+
+input {
+  color: black;
+}
+
+main  {
+  display: flex;
+  flex-direction: row;
+}
